@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "key": {
+                    "description": "Your spinbot API key",
+                    "type": "string"
+                },
+                "text": {
+                    "description": "Input article that need to be rewrited.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "key"
+            ]
+        }
+    }
+}

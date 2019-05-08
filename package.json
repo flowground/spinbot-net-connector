@@ -1,0 +1,15 @@
+{
+    "name": "spinbot-net-connector",
+    "version": "1.0.0",
+    "description": "Spinbot.net propose a new solution based on high technologies for faster article spinner and extractor that you will love to use it. ",
+    "main": "component.json",
+    "dependencies": {
+        "elasticio-node": "0.0.9",
+        "elasticio-sailor-nodejs": "^2.2.1",
+        "swagger-client": "^3.8.22"
+    },
+    "author": {
+        "name": "Deutsche Telekom AG"
+    },
+    "license": "Apache-2.0"
+}

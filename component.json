@@ -1,0 +1,106 @@
+{
+    "title": "Article Rewriter and Article Extractor",
+    "description": "Spinbot.net propose a new solution based on high technologies for faster article spinner and extractor that you will love to use it. ",
+    "docsUrl": "http://spinbot.net/api-documentation",
+    "url": "https://api.apis.guru/v2/specs/spinbot.net/1.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "http://api.spinbot.net/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "key": {
+                "label": "key (key)",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "getInfo": {
+            "main": "./lib/actions/getInfo.js",
+            "title": "Return the user credit information.",
+            "description": "Return the user credit information.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getInfo.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "postArticle": {
+            "main": "./lib/actions/postArticle.js",
+            "title": "Extracting the main article of the given URL.",
+            "description": "Extracting the main article of the given URL. The response is in JSON format.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postArticle.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "postSpiner": {
+            "main": "./lib/actions/postSpiner.js",
+            "title": "Rewriting (spinning) you input article.",
+            "description": "Rewriting (spinning) you input article. The response is in JSON format.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postSpiner.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "postSpintax": {
+            "main": "./lib/actions/postSpintax.js",
+            "title": "Generate Spintax format for the input article",
+            "description": "Generate Spintax format for the input article, so you can rewrite it yourself. The response is in JSON format.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postSpintax.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

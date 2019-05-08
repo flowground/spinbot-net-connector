@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "key": {
+                    "description": "Your spinbot API key",
+                    "type": "string"
+                },
+                "url": {
+                    "description": "The url of target article",
+                    "type": "string"
+                },
+                "faster_mode": {
+                    "description": "you can set this input value to 1 to skip detecting the size (width and height in pixel) of all the images inside the extracted article. The response time of your request will be shortened if you set this input value to 1.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "key"
+            ]
+        }
+    }
+}
